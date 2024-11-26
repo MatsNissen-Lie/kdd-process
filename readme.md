@@ -2,21 +2,6 @@
 
 ## Table of Contents
 
-<!-- 1. [Data Science Labs](#data-science-labs) -->
-
-<!-- 2. [Access the Code for Analysis](#access-the-code-for-analysis)
-3. [Datasets Used in the Project](#datasets-used-in-the-project)
-   - [Classification Datasets](#classification-datasets)
-   - [Forecasting Datasets](#forecasting-datasets)
-4. [File Structure](#file-structure)
-   - [Analysis](#analysis)
-   - [Utilities](#utilities)
-5. [Set Up LaTeX for Writing Reports](#set-up-latex-for-writing-reports)
-   - [Step 1: Install TeX Live with Homebrew](#step-1-install-tex-live-with-homebrew)
-   - [Step 2: Install the LaTeX Workshop Extension](#step-2-install-the-latex-workshop-extension)
-   - [Step 3: Configure LaTeX Workshop](#step-3-configure-latex-workshop)
-   - [Step 5: Compile Your LaTeX Document](#step-5-compile-your-latex-document) -->
-
 - [Access the Code for Analysis](#access-the-code-for-analysis)
 - [Datasets Used in the Project](#datasets-used-in-the-project)
   - [Classification Datasets](#classification-datasets)
@@ -24,6 +9,7 @@
 - [File Structure](#file-structure)
   - [Analysis](#analysis)
   - [Utilities](#utilities)
+- [Schedule](#schedule)
 - [Set Up LaTeX for Writing Reports](#set-up-latex-for-writing-reports)
   - [Step 1: Install TeX Live with Homebrew](#step-1-install-tex-live-with-homebrew)
   - [Step 2: Install the LaTeX Workshop Extension](#step-2-install-the-latex-workshop-extension)
@@ -139,6 +125,17 @@ The `utils/` folder contains helper scripts:
 <!-- - `data_loader.py`: Functions for loading datasets. -->
 
 - `preprocess.py`: Common preprocessing utilities.
+
+## Schedule
+
+| Week               | Task                                                      | Details                                                                                                                          |
+| ------------------ | --------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| 1st Week           | Team registration, Software installation                  | -                                                                                                                                |
+| 2nd Week - Eval L1 | Data profiling                                            | Data dimensionality<br>Data granularity<br>Data distribution<br>Data sparsity                                                    |
+| 3rd Week - Eval L2 | Data preparation                                          | Variables encoding<br>Missing values and outliers<br>Scaling transformation<br>Data balancing                                    |
+| 4th Week - Eval L3 | Feature selection, Performance and Overfitting evaluation | Naive Bayes study<br>KNN study<br>Decision trees study                                                                           |
+| 5th Week - Eval L4 | Feature selection, Performance and Overfitting evaluation | Random forests<br>Multi-layer perceptron<br>Gradient boosting                                                                    |
+| 6th Week - Eval L5 | Time series                                               | Profiling<br>Transformation<br>Forecasting: Persistence model, Simple average, Rolling mean, Exponential smoothing, ARIMA, LSTMs |
 
 ## Set Up LaTeX for Writing Reports
 
