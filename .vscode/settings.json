@@ -1,0 +1,10 @@
+{
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.view.pdf.viewer": "tab",
+
+  "terminal.integrated.env.osx": {
+    "PYTHONPATH": "${workspaceFolder}"
+  }
+  // "python.analysis.extraPaths": ["./src"],
+  // "notebook.fileRoot": "${workspaceFolder}"
+}
