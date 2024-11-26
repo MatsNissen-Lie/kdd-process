@@ -2,25 +2,33 @@
 
 ## Table of Contents
 
-1. [Data Science Labs](#data-science-labs)
-2. [Access the Code for Analysis](#access-the-code-for-analysis)
+<!-- 1. [Data Science Labs](#data-science-labs) -->
+
+<!-- 2. [Access the Code for Analysis](#access-the-code-for-analysis)
 3. [Datasets Used in the Project](#datasets-used-in-the-project)
    - [Classification Datasets](#classification-datasets)
    - [Forecasting Datasets](#forecasting-datasets)
 4. [File Structure](#file-structure)
-   - [Modules](#modules)
-     - [Module 1: Data Profiling](#module-1-data-profiling)
-     - [Module 2: Data Preparation](#module-2-data-preparation)
-     - [Module 3: Feature Engineering](#module-3-feature-engineering)
-     - [Module 4: Classification](#module-4-classification)
-     - [Module 5: Prediction](#module-5-prediction)
    - [Analysis](#analysis)
    - [Utilities](#utilities)
 5. [Set Up LaTeX for Writing Reports](#set-up-latex-for-writing-reports)
    - [Step 1: Install TeX Live with Homebrew](#step-1-install-tex-live-with-homebrew)
    - [Step 2: Install the LaTeX Workshop Extension](#step-2-install-the-latex-workshop-extension)
    - [Step 3: Configure LaTeX Workshop](#step-3-configure-latex-workshop)
-   - [Step 5: Compile Your LaTeX Document](#step-5-compile-your-latex-document)
+   - [Step 5: Compile Your LaTeX Document](#step-5-compile-your-latex-document) -->
+
+- [Access the Code for Analysis](#access-the-code-for-analysis)
+- [Datasets Used in the Project](#datasets-used-in-the-project)
+  - [Classification Datasets](#classification-datasets)
+  - [Forecasting Datasets](#forecasting-datasets)
+- [File Structure](#file-structure)
+  - [Analysis](#analysis)
+  - [Utilities](#utilities)
+- [Set Up LaTeX for Writing Reports](#set-up-latex-for-writing-reports)
+  - [Step 1: Install TeX Live with Homebrew](#step-1-install-tex-live-with-homebrew)
+  - [Step 2: Install the LaTeX Workshop Extension](#step-2-install-the-latex-workshop-extension)
+  - [Step 3: Configure LaTeX Workshop](#step-3-configure-latex-workshop)
+  - [Step 5: Compile Your LaTeX Document](#step-5-compile-your-latex-document)
 
 ## Access the Code for Analysis
 
@@ -202,7 +210,7 @@ The **LaTeX Workshop** extension provides features such as:
 
 Here’s the formatted version for your README:
 
-### Step 3: Configure LaTeX Workshop (Done)
+### Step 3: Configure LaTeX Workshop
 
 LaTeX Workshop automatically builds the PDF and supports live preview by default. However, you may want to customize some settings:
 
