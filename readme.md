@@ -59,67 +59,28 @@ The `src` directory is organized to align with the modular structure of the proj
 ```plaintext
 src/
 ├── module_1_profiling/
-│ ├── classification_profiling/
-│ │ ├── dimensionality.py
-│ │ ├── distribution.py
-│ │ ├── granularity.py
-│ │ ├── sparsity.py
-│ │ └── **init**.py
-│ ├── forecasting_profiling/
-│ │ ├── dimensionality.py
-│ │ ├── distribution.py
-│ │ ├── granularity.py
-│ │ ├── sparsity.py
-│ │ └── **init**.py
-│ └── **init**.py
+│   ├── classification_profiling/
+│   ├── forecasting_profiling/
+│   └── __init__.py
 ├── module_2_preparation/
-│ ├── methodology.py
-│ ├── encoding.py
-│ ├── missing_values.py
-│ ├── outliers.py
-│ ├── scaling.py
-│ ├── balancing.py
-│ ├── discretization.py
-│ └── **init**.py
+│   └── __init__.py
 ├── module_3_feature_engineering/
-│ ├── feature_selection.py
-│ ├── feature_extraction.py
-│ ├── feature_generation.py
-│ └── **init**.py
+│   └── __init__.py
 ├── module_4_classification/
-│ ├── evaluation.py
-│ ├── naive_bayes.py
-│ ├── knn.py
-│ ├── decision_trees.py
-│ ├── logistic_regression.py
-│ ├── neural_networks.py
-│ ├── svm.py
-│ ├── random_forests.py
-│ ├── gradient_boosting.py
-│ └── **init**.py
+│   └── __init__.py
 ├── module_5_prediction/
-│ ├── evaluation.py
-│ ├── regression_trees.py
-│ ├── logistic_regression.py
-│ ├── neural_networks.py
-│ ├── random_forests.py
-│ ├── gradient_boosting.py
-│ └── **init**.py
+│   └── __init__.py
 ├── analysis/
-│ ├── economic/
-│ │ ├── classification_analysis.py
-│ │ ├── forecasting_analysis.py
-│ │ └── **init**.py
-│ ├── security/
-│ │ ├── classification_analysis.py
-│ │ ├── forecasting_analysis.py
-│ │ └── **init**.py
-│ └── **init**.py
+│   ├── economic/
+│   ├── security/
+│   └── __init__.py
 └── utils/
-├── data_loader.py
-├── preprocess.py
-└── **init**.py
+    ├── data_loader.py
+    ├── preprocess.py
+    └── __init__.py
 ```
+
+For a detailed breakdown of the project structure, see the [Full File Structure](#full-file-structure) in the Appendix.
 
 <!-- ### Modules -->
 
@@ -181,6 +142,8 @@ The `utils/` folder contains helper scripts:
 
 ### Step 1: Install TeX Live with Homebrew
 
+This is for mac users with brew only. If you are using windows or linux, you can install [TeX Live](https://www.tug.org/texlive/) directly from the website (not recommende, you should get a mac and homebrew🐐).
+
 1. Open your terminal.
 
 2. Run the following command:
@@ -235,3 +198,75 @@ LaTeX Workshop automatically builds the PDF and supports live preview by default
 1. Save your `.tex` file (`Ctrl+S` on Windows/Linux or `Cmd+S` on macOS).
 2. LaTeX Workshop will automatically compile the document.
 3. The PDF viewer will reload whenever a new version of the document is compiled.
+
+## Appendix
+
+### Full File Structure
+
+The complete file structure for this project can be found below:
+
+```plaintext
+src/
+├── module_1_profiling/
+│ ├── classification_profiling/
+│ │ ├── dimensionality.py
+│ │ ├── distribution.py
+│ │ ├── granularity.py
+│ │ ├── sparsity.py
+│ │ └── **init**.py
+│ ├── forecasting_profiling/
+│ │ ├── dimensionality.py
+│ │ ├── distribution.py
+│ │ ├── granularity.py
+│ │ ├── sparsity.py
+│ │ └── **init**.py
+│ └── **init**.py
+├── module_2_preparation/
+│ ├── methodology.py
+│ ├── encoding.py
+│ ├── missing_values.py
+│ ├── outliers.py
+│ ├── scaling.py
+│ ├── balancing.py
+│ ├── discretization.py
+│ └── **init**.py
+├── module_3_feature_engineering/
+│ ├── feature_selection.py
+│ ├── feature_extraction.py
+│ ├── feature_generation.py
+│ └── **init**.py
+├── module_4_classification/
+│ ├── evaluation.py
+│ ├── naive_bayes.py
+│ ├── knn.py
+│ ├── decision_trees.py
+│ ├── logistic_regression.py
+│ ├── neural_networks.py
+│ ├── svm.py
+│ ├── random_forests.py
+│ ├── gradient_boosting.py
+│ └── **init**.py
+├── module_5_prediction/
+│ ├── evaluation.py
+│ ├── regression_trees.py
+│ ├── logistic_regression.py
+│ ├── neural_networks.py
+│ ├── random_forests.py
+│ ├── gradient_boosting.py
+│ └── **init**.py
+├── analysis/
+│ ├── economic/
+│ │ ├── classification_analysis.py
+│ │ ├── forecasting_analysis.py
+│ │ └── **init**.py
+│ ├── security/
+│ │ ├── classification_analysis.py
+│ │ ├── forecasting_analysis.py
+│ │ └── **init**.py
+│ └── **init**.py
+└── utils/
+├── data_loader.py
+├── preprocess.py
+└── **init**.py
+
+```
