@@ -38,7 +38,14 @@ This project utilizes several datasets for classification and forecasting tasks.
 - `f_e_forecast_gdp_europe.csv`: A dataset for forecasting GDP trends in Europe (economic).
 - `f_s_forecast_ny_arrests.csv`: A dataset for forecasting arrest trends in New York (security).
 
-All datasets are stored in the `../data/` directory and are referenced accordingly in the project code.
+All datasets are stored in the `data/` directory and are referenced accordingly in the project code.
+
+|                    | Security domain                           | Economical domain                    |
+| ------------------ | ----------------------------------------- | ------------------------------------ |
+| **Classification** | [dataset](#)                              | [dataset](#)                         |
+|                    | target = **LAW_CAT_CD** (binary variable) | target = **CLASS** (binary variable) |
+| **Forecasting**    | [dataset](#)                              | [dataset](#)                         |
+|                    | target = **Manhattan**                    | target = **GDP**                     |
 
 ## File Structure
 
