@@ -34,6 +34,8 @@
 
 All the code used for the analysis can be found [here](https://web.ist.utl.pt/~claudia.antunes/DSLabs/#).
 
+It should be copied and applied to the datasets. Our job is to analyze the plots, provide insights and write a lab report.
+
 This resource contains additional details and examples that complement the work in this project.
 
 ## Datasets Used in the Project
