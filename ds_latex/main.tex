@@ -180,8 +180,22 @@
 
 \section{DATA PREPARATION}
 
+% \ctext[RGB]{190,190,190}{Shall contain all relevant information respecting to the transformation of variables. The list of variables under each one of the transformations, shall be presented. If not applied explain the reason for that, based on data characteristics.  \textbf{Shall not exceed 500 characters \textit{for each dataset.}}}
 \subsection*{\textit{Variables Encoding}}
-\ctext[RGB]{190,190,190}{Shall contain all relevant information respecting to the transformation of variables. The list of variables under each one of the transformations, shall be presented. If not applied explain the reason for that, based on data characteristics.  \textbf{Shall not exceed 500 characters \textit{for each dataset.}}}
+  % Symbolic Variables: Applied OneHotEncoder for PD_DESC, OFNS_DESC, LAW_CODE, and ARREST_BORO to handle categorical data with many unique values, creating dummy variables. 
+  % Age Group: Mapped categories ('18-24', '25-44', etc.) to ordinal integers. Missing or unknown values assigned -1.
+  % Race: Encoded PERP_RACE categories as integers for simplicity and compatibility with modeling.
+  % Cyclic Variables: Not present in this dataset.
+  % write this as text in latex
+
+%   % write the text in latex
+% \text{
+%   \textbf{Symbolic Variables:} Applied OneHotEncoder for PD\_DESC, OFNS\_DESC, LAW\_CODE, and ARREST\_BORO to handle categorical data with many unique values, creating dummy variables.\\
+%   \textbf{Age Group:} Mapped categories ('18-24', '25-44', etc.) to ordinal integers. Missing or unknown values assigned -1.
+%   \text{Race:} Encoded PER_RACE categories as integers for simplicity and compatibility with modeling.
+%   \textbf{Cyclic Variables:} Not present in this dataset.
+% }
+  
 
 \subsection*{\textit{Missing Value Imputation}}
 \ctext[RGB]{190,190,190}{Shall contain all relevant information and charts respecting to missing values imputation, such as the choices made and the impact of the different approaches on modelling results. Shall also clearly reveal the approach selected to proceed with the processing. If not applied explain the reason for that, based on data characteristics.  \textbf{Shall not exceed 500 characters.}}

@@ -1,11 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1732285076.72226 "/Users/matsalexander/Library/CloudStorage/OneDrive-NTNU/afag/3-datasci/project/ds_latex/main.tex" "main.pdf" "main" 1732285078.1582 0
-  "/Users/matsalexander/Library/CloudStorage/OneDrive-NTNU/afag/3-datasci/project/ds_latex/main.tex" 1732285076.56521 38376 6b6bebc9ff2f5235c7d23b20e78f1f55 ""
+["pdflatex"] 1732815092.0981 "/Users/matsalexander/Desktop/kdd-process/ds_latex/main.tex" "main.pdf" "main" 1732815093.51854 0
+  "/Users/matsalexander/Desktop/kdd-process/ds_latex/main.tex" 1732815090.52225 39381 d5f69e22b94aa3e3b905ce750ab9f18b ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1136768653 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecsi1000.tfm" 1136768653 3584 87c00098505ed1ab5849d7a05016cb73 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecso1000.tfm" 1136768653 3584 28de528d5eb276f96f1afe67dab24105 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecso1200.tfm" 1136768653 3584 cbe5ebb0a61a12e09a1e9be16b117d04 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecss1000.tfm" 1136768653 3584 ab55608ad377891510479d34d90acc46 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/ecss1200.tfm" 1136768653 3584 db562fb1d1c474cc55f0ce8a1dd94fe7 ""
@@ -31,7 +30,6 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb" 1215737283 103607 8dec125a771685406ae21998f7cfb6f2 ""
-  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfso1000.pfb" 1215737283 160858 2985abeca00255053fda4e0f01ab8650 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfso1200.pfb" 1215737283 158660 4327036680c155e808fd5593e90c0886 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb" 1215737283 94269 4665f0d253cc3cca9439f89dbf2b9f33 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss3583.pfb" 1215737283 91028 78cd2c570954354bde1ad94fdeac3d44 ""
@@ -93,8 +91,8 @@
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1731009839 8221419 9a6a14581d29eb0877e6fec35a8e72bd ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
   "images/tecnico_logo.jpg" 1731881090 14375 f0b38e324d9f9cb81b99612c43ea658d ""
-  "main.aux" 1732285078.07779 26939 046cf227de78cea52db63b1399e87af3 "pdflatex"
-  "main.tex" 1732285076.56521 38376 6b6bebc9ff2f5235c7d23b20e78f1f55 ""
+  "main.aux" 1732815093.44376 26939 fb5915d94bd103a48734224193f7f7b6 "pdflatex"
+  "main.tex" 1732815090.52225 39381 d5f69e22b94aa3e3b905ce750ab9f18b ""
   (generated)
   "main.aux"
   "main.log"
