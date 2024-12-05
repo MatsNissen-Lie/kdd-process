@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 import pathlib
 
@@ -20,11 +21,53 @@ class DataLoader:
             "e": "CLASS",
             "s": "LAW_CAT_CD",
         }
+        self.classification_targets = {
+            "e": "CLASS",  # these can be changed as they are set by the teacher.
+            "s": "CLASS__security",  # Updated to reflect the new target variable
+        }
 
         self.forecasting_targets = {
             "e": "GDP",
             "s": "Manhattan",
         }
+
+    def binarize_jurisdiction_code(self, data):
+        if "JURISDICTION_CODE" not in data.columns:
+            raise KeyError("The dataset does not contain 'JURISDICTION_CODE' column.")
+        target = self.classification_targets["s"]
+        data[target] = data["JURISDICTION_CODE"].apply(
+            lambda x: "NY" if x < 3 else "nonNY"
+        )
+        return data
+
+    def get_security_classification_dataset_and_target(
+        self, sample_size=5000, random_state=42
+    ):
+        """
+        Returns the security classification dataset and target as a tuple,
+        with the target variable binarized and dataset reduced to a specified number of rows.
+
+        Parameters:
+        - sample_size (int): Number of rows to sample.
+        - random_state (int): Seed for reproducibility.
+
+        Returns:
+        - Tuple[pd.DataFrame, str]: The processed DataFrame and target column name.
+        """
+        # Load the entire dataset
+        data = pd.read_csv(self.path + "/" + self.classification_datasets[1])
+
+        # Binarize the 'JURISDICTION_CODE' into 'CLASS'
+
+        # Sample the dataset if it exceeds the desired sample size #teacher says we only need 5000 to have a statistically meaningful dataset
+        if len(data) > sample_size:
+            data = data.sample(n=sample_size, random_state=random_state).reset_index(
+                drop=True
+            )
+        data = self.binarize_jurisdiction_code(data)
+
+        target = self.classification_targets["s"]
+        return data, target
 
     def get_econmical_classification_dataset_and_target(self):
         """
@@ -32,14 +75,6 @@ class DataLoader:
         """
         data = pd.read_csv(self.path + "/" + self.classification_datasets[0])
         target = self.classification_targets["e"]
-        return data, target
-
-    def get_security_classification_dataset_and_target(self):
-        """
-        Returns the security classification dataset and target as a tuple.
-        """
-        data = pd.read_csv(self.path + "/" + self.classification_datasets[1])
-        target = self.classification_targets["s"]
         return data, target
 
     def get_economic_forecasting_dataset_and_target(self):
