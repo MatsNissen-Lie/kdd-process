@@ -36,7 +36,6 @@ import pathlib
 
 parent = str(pathlib.Path(__file__).parent)
 sys.path.append(parent)
-print("\n".join(sys.path))
 
 from config import (
     ACTIVE_COLORS,
