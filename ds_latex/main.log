@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.7)  28 NOV 2024 17:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.7)  6 DEC 2024 12:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -343,25 +343,29 @@ Package pdftex.def Info: ./images/tecnico_logo.jpg  used on input line 99.
 (pdftex.def)             Requested size: 135.75186pt x 66.78365pt.
 [1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 
- <./images/tecnico_logo.jpg>] [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] (./main.aux)
+ <./images/tecnico_logo.jpg>] [2]
+LaTeX Font Info:    Trying to load font information for TS1+cmss on input line 214.
+ (/usr/local/texlive/2024/texmf-dist/tex/latex/base/ts1cmss.fd
+File: ts1cmss.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+) [3{/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14] [15] [16] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 6646 strings out of 474116
- 116506 string characters out of 5743682
+ 6668 strings out of 474116
+ 117221 string characters out of 5743682
  1988187 words of memory out of 5000000
- 28894 multiletter control sequences out of 15000+600000
- 571408 words of font info for 62 fonts, out of 8000000 for 9000
+ 28911 multiletter control sequences out of 15000+600000
+ 571749 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  67i,13n,77p,599b,612s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsi1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfso1200.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfss3583.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx1440.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfsx2074.pfb>
-Output written on main.pdf (16 pages, 194799 bytes).
+Output written on main.pdf (16 pages, 195832 bytes).
 PDF statistics:
- 98 PDF objects out of 1000 (max. 8388607)
- 62 compressed objects within 1 object stream
+ 102 PDF objects out of 1000 (max. 8388607)
+ 65 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -211,8 +211,7 @@
 \end{figure}
 
 \subsection*{\textit{Outliers Treatment}}
-\ctext[RGB]{190,190,190}{Shall contain all relevant information and charts respecting to outliers imputation, such as the choices made and the impact of the different approaches on modelling results. Shall also clearly reveal the approach selected to proceed with the processing. If not applied explain the reason for that, based on data characteristics.  \textbf{Shall not exceed 500 characters.}}
-
+\ctext[RGB]{190,190,190}{Comparing no handling, dropping, fixed-value replacement, and truncation: Dropping outliers yielded the highest accuracy (0.99) but cut the dataset size drastically (3672→632). Truncation and no handling maintained data integrity but lowered accuracy. Balancing performance and data representativeness, doing nothing is chosen. }
 \begin{figure}[H]
 %\centering\includegraphics[scale=0.95]{}
 \caption{Outliers imputation results with different approaches for dataset 1}
