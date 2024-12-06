@@ -30,6 +30,10 @@ class DataLoader:
             "e": "GDP",
             "s": "Manhattan",
         }
+        self.default_dict = {
+            "sample_size": 5100,
+            "random_state": 42,
+        }
 
     def binarize_jurisdiction_code(self, data):
         if "JURISDICTION_CODE" not in data.columns:
@@ -41,7 +45,7 @@ class DataLoader:
         return data
 
     def get_security_classification_dataset_and_target(
-        self, sample_size=5000, random_state=42
+        self, sample_size=None, random_state=None
     ):
         """
         Returns the security classification dataset and target as a tuple,
@@ -54,6 +58,10 @@ class DataLoader:
         Returns:
         - Tuple[pd.DataFrame, str]: The processed DataFrame and target column name.
         """
+        if sample_size is None:
+            sample_size = self.default_dict["sample_size"]
+        if random_state is None:
+            random_state = self.default_dict["random_state"]
         # Load the entire dataset
         data = pd.read_csv(self.path + "/" + self.classification_datasets[1])
 
