@@ -40,7 +40,7 @@ class EvaluationEnum(Enum):
     OUTLIERS = 2
     SCALING = 3
     BALANCE = 4
-    LAST = 5
+    LAST = 100
 
 
 class Pipeline:
@@ -56,7 +56,7 @@ class Pipeline:
         #  Balance the data
         # -----------------------
 
-        if self.evaluation.value <= EvaluationEnum.BALANCE.value:
+        if self.evaluation.value >= EvaluationEnum.BALANCE.value:
             sample_size = 100000
         else:
             sample_size = 5100
