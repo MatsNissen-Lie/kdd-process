@@ -140,6 +140,25 @@ class Pipeline:
         data, target = (
             self.data_loader.get_econmical_classification_dataset_and_target()
         )
+        correlated_variables = [
+            "x7",
+            "x13",
+            "x33",
+            "x34",
+            "x38",
+            "x48",
+            "x49",
+            "x50",
+            "x52",
+            "x53",
+            "x62",
+            "x75",
+            "x76",
+            "x77",
+            "x79",
+            "x81",
+        ]
+        data = data.drop(columns=correlated_variables)
 
         return data, target
 
