@@ -1,7 +1,10 @@
+from imblearn.over_sampling import SMOTE
 import pathlib
 import sys
 import numpy as np
 import pandas as pd
+from pandas import DataFrame, Series
+from sklearn.preprocessing import StandardScaler
 
 root = pathlib.Path(__file__).parent.parent.parent
 sys.path.append(str(root))
@@ -28,17 +31,50 @@ class DataLoaderInterface:
         pass
 
 
+from enum import Enum
+
+
+class EvaluationEnum(Enum):
+    ENCODING = 0
+    MISSING_VALUES = 1
+    OUTLIERS = 2
+    SCALING = 3
+    BALANCE = 4
+    LAST = 5
+
+
 class Pipeline:
-    def __init__(self):
+    def __init__(self, evaluation: EvaluationEnum = None):
         self.data_loader = DataLoader()
+        self.evaluation = evaluation if evaluation else EvaluationEnum.LAST
 
     def get_security_classification_dataset_and_target(
         self, sample_size: int = None, random_state: int = None
     ) -> tuple[pd.DataFrame, str]:
-        # Load the raw data and target
+
+        # -----------------------
+        #  Balance the data
+        # -----------------------
+
+        if self.evaluation.value <= EvaluationEnum.BALANCE.value:
+            sample_size = 100000
+        else:
+            sample_size = 5100
+
         data, target = self.data_loader.get_security_classification_dataset_and_target(
             sample_size, random_state
         )
+
+        # -----------------------
+        # Drop Irrelevant Columns
+        # -----------------------
+        drop_columns = [
+            "X_COORD_CD",  # duplicates information from Latitude/Longitude
+            "Y_COORD_CD",  # same as above
+            "PD_DESC",  # unstructured and less informative than OFNS_DESC
+            "ARREST_KEY",  # unique identifier not needed for traning
+        ]
+        data = data.drop(columns=drop_columns)
 
         # -----------------------
         # Fix Known Data Issues
@@ -66,17 +102,6 @@ class Pipeline:
         # CLASS__security: map {'NY':1, 'nonNY':0}
         if "CLASS__security" in data.columns:
             data["CLASS__security"] = data["CLASS__security"].map({"NY": 1, "nonNY": 0})
-
-        # -----------------------
-        # Drop Irrelevant Columns
-        # -----------------------
-        drop_columns = [
-            "X_COORD_CD",  # duplicates information from Latitude/Longitude
-            "Y_COORD_CD",  # same as above
-            "PD_DESC",  # unstructured and less informative than OFNS_DESC
-            "ARREST_KEY",  # unique identifier not needed for traning
-        ]
-        data = data.drop(columns=drop_columns)
 
         # -----------------------
         # Encode AGE_GROUP
@@ -126,10 +151,44 @@ class Pipeline:
 
             # Drop original date and DAY_OF_YEAR column
             data = data.drop(columns=["ARREST_DATE", "DAY_OF_YEAR"], errors="ignore")
+        if self.evaluation.value == EvaluationEnum.ENCODING.value:
+            return data, target
         # -----------------------
         # Final Dataset
         # -----------------------
         data = data.dropna()
+
+        if self.evaluation.value < EvaluationEnum.MISSING_VALUES.value:
+            return data, target
+        # -----------------------
+        #  Standardize the data
+        # -----------------------
+        target_data: Series = data.pop(target)
+
+        transf: StandardScaler = StandardScaler(
+            with_mean=True, with_std=True, copy=True
+        ).fit(data)
+        df_zscore = DataFrame(transf.transform(data), index=data.index)
+        df_zscore[target] = target_data
+        data = df_zscore
+        if self.evaluation.value == EvaluationEnum.SCALING.value:
+            return data, target
+
+        # -----------------------
+        #  Balance the data
+        # -----------------------
+        target_count: Series = data[target].value_counts()
+        positive_class = target_count.idxmin()
+        negative_class = target_count.idxmax()
+
+        df_positives: Series = data[data[target] == positive_class]
+        df_negatives: Series = data[data[target] == negative_class]
+
+        df_neg_sample: DataFrame = DataFrame(df_negatives.sample(len(df_positives)))
+        df_under: DataFrame = pd.concat([df_positives, df_neg_sample], axis=0)
+        data = df_under
+        if self.evaluation.value == EvaluationEnum.BALANCE.value:
+            return data, target
 
         return data, target
 
@@ -159,6 +218,38 @@ class Pipeline:
             "x81",
         ]
         data = data.drop(columns=correlated_variables)
+
+        if self.evaluation.value < EvaluationEnum.SCALING.value:
+            return data, target
+
+        # -----------------------
+        #  Standardize the data
+        # -----------------------
+        target_data: Series = data.pop(target)
+
+        transf: StandardScaler = StandardScaler(
+            with_mean=True, with_std=True, copy=True
+        ).fit(data)
+        df_zscore = DataFrame(transf.transform(data), index=data.index)
+        df_zscore[target] = target_data
+        data = df_zscore
+        if self.evaluation.value == EvaluationEnum.SCALING.value:
+            return data, target
+
+        # -----------------------
+        #  Balance the data
+        # -----------------------
+        RANDOM_STATE = 42
+
+        smote: SMOTE = SMOTE(sampling_strategy="minority", random_state=RANDOM_STATE)
+        y = data.pop(target).values
+        X: np.ndarray = data.values
+        smote_X, smote_y = smote.fit_resample(X, y)
+        df_smote: DataFrame = pd.concat(
+            [DataFrame(smote_X), DataFrame(smote_y)], axis=1
+        )
+        df_smote.columns = list(data.columns) + [target]
+        data = df_smote
 
         return data, target
 
