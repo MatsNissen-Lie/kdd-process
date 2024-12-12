@@ -20,6 +20,8 @@
 
 All the code used for the analysis can be found [here](https://web.ist.utl.pt/~claudia.antunes/DSLabs/#).
 
+The report can be found [here](https://www.overleaf.com/project/67489b730eb4a82faee0a807).
+
 It should be copied and applied to the datasets. Our job is to analyze the plots, provide insights and write a lab report.
 
 This resource contains additional details and examples that complement the work in this project.
