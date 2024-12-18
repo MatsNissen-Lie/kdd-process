@@ -168,7 +168,7 @@ class Pipeline:
         transf: StandardScaler = StandardScaler(
             with_mean=True, with_std=True, copy=True
         ).fit(data)
-        df_zscore = DataFrame(transf.transform(data), index=data.index)
+        df_zscore = DataFrame(transf.transform(data), index=data.index, columns=data.columns)
         df_zscore[target] = target_data
         data = df_zscore
         if self.evaluation.value == EvaluationEnum.SCALING.value:
@@ -230,7 +230,7 @@ class Pipeline:
         transf: StandardScaler = StandardScaler(
             with_mean=True, with_std=True, copy=True
         ).fit(data)
-        df_zscore = DataFrame(transf.transform(data), index=data.index)
+        df_zscore = DataFrame(transf.transform(data), index=data.index, columns=data.columns)
         df_zscore[target] = target_data
         data = df_zscore
         if self.evaluation.value == EvaluationEnum.SCALING.value:

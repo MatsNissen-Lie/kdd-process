@@ -9,6 +9,9 @@ class DataLoader:
         root = pathlib.Path(__file__).parent.parent.parent
         self.path = str(root) + "/data"
 
+        if not pathlib.Path(self.path).exists():
+            self.path = str(root) + "/data_copy"
+
         self.classification_datasets = [
             "c_e_class_financial_distress.csv",
             "c_s_class_ny_arrests.csv",
