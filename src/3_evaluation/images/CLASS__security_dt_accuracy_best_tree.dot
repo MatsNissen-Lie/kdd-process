@@ -1,0 +1,9 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<JURISDICTION_CODE &le; 0.26<br/>samples = 4163<br/>value = [2073, 2090]<br/>class = 1.0>, fillcolor="#fdfeff"] ;
+1 [label=<samples = 2090<br/>value = [0, 2090]<br/>class = 1.0>, fillcolor="#399de5"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<samples = 2073<br/>value = [2073, 0]<br/>class = 0.0>, fillcolor="#e58139"] ;
+0 -> 2 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+}
