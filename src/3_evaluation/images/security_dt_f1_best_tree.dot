@@ -1,0 +1,33 @@
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname="helvetica"] ;
+edge [fontname="helvetica"] ;
+0 [label=<LAW_CODE &le; 0.71<br/>samples = 4164<br/>value = [2082, 2082]<br/>class = 1>, fillcolor="#ffffff"] ;
+1 [label=<ARREST_PRECINCT &le; 0.42<br/>samples = 2659<br/>value = [1027.0, 1632.0]<br/>class = 0>, fillcolor="#b6dbf5"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label=<ARREST_PRECINCT &le; 0.37<br/>samples = 509<br/>value = [318, 191]<br/>class = 1>, fillcolor="#f5cdb0"] ;
+1 -> 2 ;
+3 [label="(...)", fillcolor="#C0C0C0"] ;
+2 -> 3 ;
+16 [label="(...)", fillcolor="#C0C0C0"] ;
+2 -> 16 ;
+25 [label=<ARREST_PRECINCT &le; 3.27<br/>samples = 2150<br/>value = [709, 1441]<br/>class = 0>, fillcolor="#9acdf2"] ;
+1 -> 25 ;
+26 [label="(...)", fillcolor="#C0C0C0"] ;
+25 -> 26 ;
+41 [label="(...)", fillcolor="#C0C0C0"] ;
+25 -> 41 ;
+56 [label=<LAW_CODE &le; 0.84<br/>samples = 1505<br/>value = [1055, 450]<br/>class = 1>, fillcolor="#f0b78d"] ;
+0 -> 56 [labeldistance=2.5, labelangle=-45, headlabel="False"] ;
+57 [label=<ARREST_PRECINCT &le; 3.11<br/>samples = 318<br/>value = [275, 43]<br/>class = 1>, fillcolor="#e99558"] ;
+56 -> 57 ;
+58 [label="(...)", fillcolor="#C0C0C0"] ;
+57 -> 58 ;
+69 [label="(...)", fillcolor="#C0C0C0"] ;
+57 -> 69 ;
+76 [label=<ARREST_PRECINCT &le; 1.19<br/>samples = 1187<br/>value = [780, 407]<br/>class = 1>, fillcolor="#f3c3a0"] ;
+56 -> 76 ;
+77 [label="(...)", fillcolor="#C0C0C0"] ;
+76 -> 77 ;
+90 [label="(...)", fillcolor="#C0C0C0"] ;
+76 -> 90 ;
+}
