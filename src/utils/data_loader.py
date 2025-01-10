@@ -8,6 +8,10 @@ class DataLoader:
 
         root = pathlib.Path(__file__).parent.parent.parent
         self.path = str(root) + "/data_copy"
+        if not pathlib.Path(self.path).exists():
+            self.path = str(root) + "/data"
+        elif not pathlib.Path(self.path).exists():
+            raise FileNotFoundError("The data folder does not exist.")
 
         self.classification_datasets = [
             "c_e_class_financial_distress.csv",
