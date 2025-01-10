@@ -7,6 +7,7 @@ class DataLoader:
     def __init__(self):
 
         root = pathlib.Path(__file__).parent.parent.parent
+        
         self.path = str(root) + "/data"
 
         if not pathlib.Path(self.path).exists():
