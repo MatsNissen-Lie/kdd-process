@@ -159,8 +159,9 @@ class Pipeline:
         # -----------------------
         data = data.dropna()
 
-        if self.evaluation.value < EvaluationEnum.MISSING_VALUES.value:
+        if self.evaluation.value <= EvaluationEnum.OUTLIERS.value:
             return data, target
+
         # -----------------------
         #  Standardize the data
         # -----------------------
@@ -169,7 +170,9 @@ class Pipeline:
         transf: StandardScaler = StandardScaler(
             with_mean=True, with_std=True, copy=True
         ).fit(data)
-        df_zscore = DataFrame(transf.transform(data), index=data.index, columns=data.columns)
+        df_zscore = DataFrame(
+            transf.transform(data), index=data.index, columns=data.columns
+        )
         df_zscore[target] = target_data
         data = df_zscore
         if self.evaluation.value == EvaluationEnum.SCALING.value:
@@ -190,12 +193,28 @@ class Pipeline:
         data = df_under
         if self.evaluation.value == EvaluationEnum.BALANCE.value:
             return data, target
-        
 
         # -----------------------
         #  Feature selection
         # -----------------------
-        vars2drop=['PD_CD', 'KY_CD', 'OFNS_DESC', 'LAW_CAT_CD', 'ARREST_BORO', 'AGE_GROUP', 'PERP_SEX', 'PERP_RACE', 'Latitude', 'Longitude', 'YEAR', 'MONTH', 'DAY_OF_WEEK', 'IS_WEEKEND', 'DAY_OF_YEAR_sin', 'DAY_OF_YEAR_cos']
+        vars2drop = [
+            "PD_CD",
+            "KY_CD",
+            "OFNS_DESC",
+            "LAW_CAT_CD",
+            "ARREST_BORO",
+            "AGE_GROUP",
+            "PERP_SEX",
+            "PERP_RACE",
+            "Latitude",
+            "Longitude",
+            "YEAR",
+            "MONTH",
+            "DAY_OF_WEEK",
+            "IS_WEEKEND",
+            "DAY_OF_YEAR_sin",
+            "DAY_OF_YEAR_cos",
+        ]
         data = data.drop(columns=vars2drop)
         if self.evaluation.value == EvaluationEnum.FEATURE_SELECTION.value:
             return data, target
@@ -240,7 +259,9 @@ class Pipeline:
         transf: StandardScaler = StandardScaler(
             with_mean=True, with_std=True, copy=True
         ).fit(data)
-        df_zscore = DataFrame(transf.transform(data), index=data.index, columns=data.columns)
+        df_zscore = DataFrame(
+            transf.transform(data), index=data.index, columns=data.columns
+        )
         df_zscore[target] = target_data
         data = df_zscore
         if self.evaluation.value == EvaluationEnum.SCALING.value:
@@ -260,18 +281,48 @@ class Pipeline:
         )
         df_smote.columns = list(data.columns) + [target]
         data = df_smote
-           
+
         # -----------------------
         # Feature selection
         # -----------------------
-        vars2drop = ['Time', 'x1', 'x10', 'x14', 'x16', 'x19', 'x2', 'x23', 'x24', 'x25', 'x3', 'x30', 'x32', 'x35', 'x36', 'x40', 'x41', 'x43', 'x44', 'x46', 'x5', 'x59', 'x61', 'x63', 'x64', 'x68', 'x70', 'x73', 'x78', 'x8', 'x9']
+        vars2drop = [
+            "Time",
+            "x1",
+            "x10",
+            "x14",
+            "x16",
+            "x19",
+            "x2",
+            "x23",
+            "x24",
+            "x25",
+            "x3",
+            "x30",
+            "x32",
+            "x35",
+            "x36",
+            "x40",
+            "x41",
+            "x43",
+            "x44",
+            "x46",
+            "x5",
+            "x59",
+            "x61",
+            "x63",
+            "x64",
+            "x68",
+            "x70",
+            "x73",
+            "x78",
+            "x8",
+            "x9",
+        ]
         data = data.drop(columns=vars2drop)
         if self.evaluation.value == EvaluationEnum.FEATURE_SELECTION.value:
             return data, target
 
-
         return data, target
- 
 
 
 if __name__ == "__main__":
